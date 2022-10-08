@@ -557,7 +557,7 @@ function Tasks() {
               <h1 className="tasks__div__heading">
                 <a
                   target="_blank"
-                  href="https://twitter.com/zepcoinofficial"
+                  href="https://twitter.com/zepcoinofficial/status/1578713322530426882?s=46&t=dFMJzhB-INFRfwmRxXDpKQ"
                   className="tasks__div__links"
                   onClick={() => {
                     setRetweet(true);
