@@ -23,7 +23,7 @@ padding:0;
 background:#23304c;
 /* max-width: 1800px; */
 max-width: 2000px;
-position: fixed;
+position: relative;
 height: 100vh;
 width: 100%;
 }
@@ -94,6 +94,12 @@ width: 100%;
 
 .second{
     font-size: 72px;
+}
+
+
+
+.task__details__mainBox{
+    width: 100%;
 }
 
 .tasks__details{
@@ -548,6 +554,15 @@ width: 100%;
         }
     }
 
+
+    @media only screen and (min-width: 1440px){
+
+        .tasks__left{
+            margin-left: 20%;
+            margin-right: auto;
+        }
+    }
+
     @media only screen and (max-width: 1440px){
         .tasks__right{
             right: 7%;
@@ -746,6 +761,14 @@ width: 100%;
         }
       }
 
+
+      @media screen and (min-device-width: 660px) and (max-device-width: 1440px){
+        .tasks__left{
+            margin-left: 20%;
+            margin-right: auto;
+        }
+       
+      }
 
       @media screen and (min-device-width: 400px) and (max-device-width: 900px){
 

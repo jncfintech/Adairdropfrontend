@@ -20,7 +20,7 @@ function Tasks() {
   const navigate = useNavigate();
   // const [allOpeninputtofalse,setAllopeninputtoflase] = useState();
  
-  const [email,setEmail] = useState();
+  const [email,setEmail] = useState(null);
   const [openBuy, setOpenbuy] = useState(false);
   const [openTweetinput, setOpenTweetinput] = useState(false);
   const [openRetweetInput, setOpenRetweetinput] = useState(false);
@@ -209,6 +209,10 @@ function Tasks() {
 
 
   const setLoggeduseremail = async () =>{
+
+    if(email !== null){
+
+    
     setEmail(email)
 
 
@@ -322,6 +326,13 @@ function Tasks() {
     console.log('buy')
     console.log(buy)
 
+  }else{
+    toast.error('Please enter email address', {
+      position: 'top-center',
+      autoClose: 2000,
+    });
+  }
+
   }
 
  
@@ -345,10 +356,12 @@ function Tasks() {
           Claim Your Free $10000 Worth of ZEPX
         </h1>
 
+        <div className="task__details__mainBox">
+
         <div className="tasks__details">
             <div className="tasks__div__top">
                 <input value={email} onChange={(e)=> setEmail(e.target.value)} placeholder='Enter your email'  className='tasks__div__heading email'/>
-                <button className="tasks__div__amount"  onClick={setLoggeduseremail}>Fetch</button>
+                <button className="tasks__div__amount"  onClick={setLoggeduseremail}>Start</button>
                 {/* <img className="tasks__div__details__arrows" src={ARROWBUTTON1} onclick={ setLoggeduseremail}/> */}
 
             </div>
@@ -406,6 +419,8 @@ function Tasks() {
                     <button
                       className="tasks__div__checkFollower__button"
                       onClick={async () => {
+
+                        if(email !== null){
                         
                           const response = await axios.post(
                             "/savetweetid",
@@ -433,6 +448,13 @@ function Tasks() {
                             console.log("id is not matched with follower");
                             alert("id not matched");
                           }
+
+                        }else{
+                          toast.error('Please enter email address', {
+                            position: 'top-center',
+                            autoClose: 2000,
+                          });
+                        }
                        
                       }}
                     >
@@ -453,6 +475,10 @@ function Tasks() {
                   target="_blank"
                   href="https://t.me/zepverse"
                   onClick={async () => {
+
+                    if(email !== null){
+
+                    
                     const response = await axios.post(
                       "/savetelegramtaskstatus",
                       {
@@ -464,10 +490,16 @@ function Tasks() {
 
                     setJointelegram(true);
                     setOpentelegraminput(false);
+                    }else{
+                      toast.error('Please enter email address for complete task', {
+                        position: 'top-center',
+                        autoClose: 2000,
+                      });
+                    }
                   }}
                   className="tasks__div__links joinTelegram__link"
                 >
-                  Join @ZEPCOIN on telegram
+                  Join @ZEPVERSE on telegram
                 </a>
               </h1>
               {joinTelegram ? (
@@ -560,9 +592,18 @@ function Tasks() {
                   href="https://twitter.com/zepcoinofficial/status/1578713322530426882?s=46&t=dFMJzhB-INFRfwmRxXDpKQ"
                   className="tasks__div__links"
                   onClick={() => {
+                    if(email !== null ){
+
+                    
                     setRetweet(true);
                     setCheckusernameTrueorfalse(true);
                     saveretweetstatus();
+                    }else{
+                      toast.error('Please enter email address for complete task', {
+                        position: 'top-center',
+                        autoClose: 2000,
+                      });
+                    }
                   }}
                 >
                   Retweet @ZEPCOIN on twitter
@@ -688,22 +729,27 @@ function Tasks() {
               <h1 className="tasks__div__heading tweet__on__twitter">
                 <a
                onClick={()=>{
+                if(email !== null){
                 {
                   setTweet(true)
 
                           savetweettaskstatus()
+                }}else{
+                  toast.error('Please enter email address for complete task', {
+                    position: 'top-center',
+                    autoClose: 2000,
+                  });
                 }
                }}
                   target="_blank"
-                  href="https://twitter.com/intent/tweet?text=Guyzz I have found this intresting Crypto ICO 
-Its live now. Its $0.0001 $ZEP 🤑🤑 Zep it now.
-
-
-ZIP.....ZAP.....ZOOP🤗🤗🤗
-
-visit- https://zepcoin.io/
-join the community also- https://bit.ly/zepcoin
-#Zepians #newcrypto"
+                  href="https://twitter.com/intent/tweet?text=The new crypto ICO celebration is here
+                  #ZEPX #zepcoin a token for the advanced universe @zepverse .
+                  
+                  Buy the ICO and get a chance to enter #zepians community.
+                  10000 $ZEPX for $1. also free Airdrop worth $10000.
+                  
+                  Visit- zepcoin.io
+                  #cryptomarket #Bitcoin #BINANCE"
                 >
                   Tweet @ZEPCOIN on twitter
                 </a>
@@ -824,6 +870,7 @@ join the community also- https://bit.ly/zepcoin
                   <button
                     className="tasks__div__bottom__submit__button"
                     onClick={async () => {
+                      if(email !== null){
                       const response = await axios.post(
                         "/savewallettaskstatus",
                         {
@@ -839,6 +886,12 @@ join the community also- https://bit.ly/zepcoin
                       } else {
                         setWalletaddressstatus(false);
                       }
+                    }else{
+                      toast.error('Please enter email address for complete task', {
+                        position: 'top-center',
+                        autoClose: 2000,
+                      });
+                    }
                     }}
                   >
                     Submit
@@ -852,7 +905,12 @@ join the community also- https://bit.ly/zepcoin
             <div className="tasks__div__top">
               <h1 className="tasks__div__heading buy"> <a
             
-              onClick={() =>{ saveBuystatus(); setBuy(true)}}
+              onClick={() =>{ 
+               
+                saveBuystatus();
+                 setBuy(true)
+                
+              }}
               href="https://zepcoin.link/"
               className="tasks__div__links buyButton__link"
             >Buy ICO-ZEPCOIN </a></h1>
@@ -882,6 +940,9 @@ join the community also- https://bit.ly/zepcoin
            ) : null} */}
           </div>
         </div>
+
+        </div>
+
       </div>
 
       <div className="tasks__right">
