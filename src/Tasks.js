@@ -66,7 +66,7 @@ function Tasks() {
           retweet: true,
           loggedUserData: email,
         },
-        { withCredentials: true }
+        
       );
     } catch (err) {
       console.log(err);
@@ -80,7 +80,7 @@ function Tasks() {
         buy: true,
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     console.log(response);
@@ -100,7 +100,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const retweetTaskresponse = await axios.post(
@@ -108,7 +108,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const walletAddresstaskresponse = await axios.post(
@@ -116,7 +116,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const tweettaskresponse = await axios.post(
@@ -124,7 +124,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const telegramtaskresponse = await axios.post(
@@ -132,7 +132,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const buytaskresponse = await axios.post(
@@ -140,7 +140,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
 
@@ -199,7 +199,7 @@ function Tasks() {
         tweet: true,
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     console.log(response);
@@ -218,7 +218,7 @@ function Tasks() {
 
     const tweetIdtaskresponse = await axios.post('/fetchtweetidtaskresponse',{
       email : email
-    },{withCredentials : true})
+    })
 
     // if(tweetIdtaskresponse){
 
@@ -240,7 +240,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const retweetTaskresponse = await axios.post(
@@ -248,7 +248,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const walletAddresstaskresponse = await axios.post(
@@ -256,7 +256,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const tweettaskresponse = await axios.post(
@@ -264,7 +264,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const telegramtaskresponse = await axios.post(
@@ -272,7 +272,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     const buytaskresponse = await axios.post(
@@ -280,7 +280,7 @@ function Tasks() {
       {
         loggedUserData: email,
       },
-      { withCredentials: true }
+      
     );
 
     
@@ -428,7 +428,7 @@ function Tasks() {
                               email : email,
                               tweetid: checkFollower,
                             },
-                            { withCredentials: true }
+                            
                           );
                           console.log("response from check follower");
                           console.log(response);
@@ -485,7 +485,7 @@ function Tasks() {
                         joinTelegram: true,
                         loggedUserData: email,
                       },
-                      { withCredentials: true }
+                      
                     );
 
                     setJointelegram(true);
@@ -569,7 +569,7 @@ function Tasks() {
             //                 joinTelegram: true,
             //                 loggedUserData: loggedUserData,
             //               },
-            //               { withCredentials: true }
+            //               
             //             );
 
             //             setJointelegram(true);
@@ -663,7 +663,7 @@ function Tasks() {
                             {
                               checkRetweet: checkRetweet,
                             },
-                            { withCredentials: true }
+                            
                           );
                           console.log("response from checkretweeted");
                           console.log(response);
@@ -799,7 +799,7 @@ function Tasks() {
                           {
                             tweetId: checkTweet,
                           },
-                          { withCredentials: true }
+                          
                         );
 
                         console.log("response from tweet id");
@@ -877,7 +877,7 @@ function Tasks() {
                           walletAddress: walletAddress,
                           loggedUserData: email,
                         },
-                        { withCredentials: true }
+                        
                       );
 
                       if (response) {
